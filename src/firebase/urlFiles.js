@@ -9,14 +9,12 @@
 
 const { Storage } = require('@google-cloud/storage');
 
-require('dotenv').config();
-
 const storage = new Storage({
     credentials: require('./credentials')
 });
 
 
-async function main(bucketName, fileName) {
+async function urlFile(bucketName, fileName) {
     
     return new Promise((resolve, reject) => {
         (async function generateSignedUrl() {
@@ -43,7 +41,7 @@ async function main(bucketName, fileName) {
 }
 
 const getUrl = async (bucketName, fileName) => {
-    return await main(bucketName, fileName)
+    return await urlFile(bucketName, fileName)
         .then(result => result).catch(console.error);
 }
 
