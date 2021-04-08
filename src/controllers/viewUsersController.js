@@ -4,7 +4,7 @@ exports.viewUser = async (req, res) => {
     const result = await select_bd.select('users', '*');
 
     return res.json({
-        status: false,
+        status: true,
         data: result,
         messageSucess: 'Busca concluída'
     });
