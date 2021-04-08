@@ -1,3 +1,4 @@
 /node_modules
 firebase-storage-credentials.json
 .env
+env
