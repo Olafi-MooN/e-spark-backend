@@ -5,11 +5,11 @@ const router = require('express').Router();
 const insertController = require('../controllers/insertController').insert;
 const viewUserController = require('../controllers/viewUsersController').viewUser;
 const loginController = require('../controllers/loginController').login;
-const authorization = require('../controllers/middleController').middle;
+const authorization_jwt = require('../auth-jwt/middleController').middle;
 
 // Cria as rotas.
 router.post('/insert', insertController);
-router.get('/users', authorization, viewUserController);
+router.get('/users', authorization_jwt, viewUserController);
 router.post('/login', loginController);
 
 module.exports = router;
