@@ -12,4 +12,5 @@ router.post('/insert', insertController);
 router.get('/users', authorization_jwt, viewUserController);
 router.post('/login', loginController);
 
+
 module.exports = router;
