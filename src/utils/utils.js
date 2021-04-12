@@ -1,3 +1,6 @@
+/* 
+    CONVERTE UM ARRAY PARA UM OBJETO
+*/
 function arrayToObject (object = []) {
     let objeto = {};
 
@@ -12,6 +15,9 @@ function arrayToObject (object = []) {
     return objeto;
 }
 
+/* 
+    MESCLA DOIS ARRAYS TRANSFORMANDO OS MESMOS EM UM OBJETO
+*/
 function joinArraysToObject(arrayNameAttributes, arrayValueAttributes) {
     let newObject = {};
     
