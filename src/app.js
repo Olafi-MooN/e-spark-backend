@@ -1,10 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { routes } from './routes/index.js';
+import { connection_db } from './database/index.js';
+import cors from 'cors';
+
 const app = express();
-const cors = require('cors');
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
-app.use(cors()); // O cors permite que outros endereços/ rotas se comunique com API
-app.use(express.json()); // Permite receber um json na rota
-app.use(require('body-parser').json());
-app.use(require('./routes/route')); // Onde vai ficar toda a rota da nossa aplicação.
+connection_db();
 
-module.exports = app; // Cria um modulo para que o server reconheça o app.
+export { app };

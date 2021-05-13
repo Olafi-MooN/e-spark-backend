@@ -1,0 +1,13 @@
+TABLE CARS
+npx sequelize-cli model:generate --name Cars --attributes name_car:STRING,quantity_in_stock:NUMBER,id_datasheet:NUMBER,id_cars_description:NUMBER
+
+TABLE CARS DESCRIPTION
+npx sequelize-cli model:generate --name Cars_description --attributes description:STRING,title:STRING,url_img_description:STRING,id_cars:INTEGER
+
+TABLES CARS DATASHEET - CORRECT
+npx sequelize-cli model:generate --name Cars_datasheet --attributes brand:STRING,model:STRING,category:STRING,autonomy:STRING,maximum_speed:STRING,acceleration:STRING,power:STRING,transmission:STRING,occupants:INTEGER,capacity:STRING
+
+TABLES USERS 
+npx sequelize-cli model:generate --name Users --attributes first_name:STRING,last_name:STRING,email:STRING,password:STRING,
+
+  

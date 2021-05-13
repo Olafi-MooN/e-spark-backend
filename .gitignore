@@ -1,4 +1,4 @@
-/node_modules
-firebase-storage-credentials.json
+node_modules
+database.sqlite
 .env
-env
+firebase.js
