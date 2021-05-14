@@ -27,9 +27,13 @@ async function store(req, res) {
             })
         }
 
+        const { id } = user[0];
+        const token = createToken({ id, email, first_name, last_name });
+
         return res.status(201).json({
             status: true,
-            user
+            data: token,
+            message: 'Usuário criado com sucesso!'
         });
 
     } catch (error) {
