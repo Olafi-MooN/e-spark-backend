@@ -8,7 +8,7 @@ import { store as usersStore, index as usersIndex, update as usersUpdate, destro
 
 const routes = Router();
 
-routes.get('/', middlewareJWT, home);
+routes.get('/', home);
 
 routes.post('/cars', carsStore);
 routes.get('/cars', indexCars);
