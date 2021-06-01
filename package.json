@@ -6,7 +6,8 @@
   "main": "src/server",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "dev": "nodemon",
+    "start": "node src/server"
   },
   "keywords": [],
   "author": "",
