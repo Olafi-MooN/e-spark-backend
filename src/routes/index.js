@@ -5,6 +5,7 @@ import { store as carsStore, index as indexCars, destroy as carsDestroy } from '
 import { store as cars_DescriptionStore } from '../controllers/carsDescriptionController/index.js';
 import { store as cars_DatasheetStore } from '../controllers/carsDatasheetController/index.js';
 import { store as usersStore, index as usersIndex, update as usersUpdate, destroy as usersDestroy, login} from '../controllers/usersController/index.js';
+import { store as usercarsStore, index as userscarsIndex } from '../controllers/userscarsController/index.js';
 
 const routes = Router();
 
@@ -21,6 +22,9 @@ routes.post('/users', usersStore);
 routes.get('/users', usersIndex);
 routes.put('/users/:id', usersUpdate);
 routes.delete('/users/:id', usersDestroy);
+
+routes.post('/userscars', usercarsStore);
+routes.get('/userscars/:id_user', userscarsIndex);
 
 routes.post('/users/login', login);
 
