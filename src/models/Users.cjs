@@ -16,8 +16,6 @@ class Users extends Model {
 
   static associate(models) {
     /* this.belongsTo(models.Cars, { foreignKey: 'id_cars', as: 'Cars' }); */
-    this.belongsToMany(models.Cars, { foreignKey: 'id_users', through: 'Users_cars', as: 'Usercars' })
-
   }
 };
 

@@ -37,8 +37,11 @@ async function index(req, res) {
     try {
         const usercars = await Users_cars.findAll({
             where: {
-                id_users: id_user,
-            }
+                id_users: id_user
+            },
+            include: [
+                { association: 'Users_car' },
+            ] 
         })
 
         return res.status(200).json({
