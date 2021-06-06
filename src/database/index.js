@@ -5,6 +5,7 @@ import Cars_description from '../models/Cars_description.cjs';
 import Cars_datasheet from '../models/Cars_datasheet.cjs';
 import Cars from '../models/Cars.cjs';
 import Users from '../models/Users.cjs';
+import Users_cars from '../models/Users_cars.cjs';
  
 // indica para o sequelize, qual o tipo de banco de dados será utilizado
 const sequelize = new Sequelize(config.development);
@@ -21,11 +22,14 @@ async function connection_db () {
  
 Cars.init(sequelize);
 Cars_description.init(sequelize);
-Cars_datasheet.init(sequelize)
-Users.init(sequelize)
+Cars_datasheet.init(sequelize);
+Users.init(sequelize);
+Users_cars.init(sequelize);
 
 Cars_description.associate(sequelize.models);
 Cars_datasheet.associate(sequelize.models);
 Cars.associate(sequelize.models);
+Users.associate(sequelize.models);
+Users_cars.associate(sequelize.models);
 
 export { sequelize, connection_db };
