@@ -10,7 +10,7 @@ async function store(req, res) {
     } = req.body;
 
     try {
-        
+
         const user = await Users.findOrCreate({
             where: { email },
             defaults: {
@@ -46,7 +46,13 @@ async function store(req, res) {
 }
 
 async function index(req, res) {
-    const user = await Users.findAll();
+
+    const user = await Users.findAll(
+        {
+            attributes: ['id', 'first_name', 'last_name', 'email', 'createdAt', 'updatedAt']
+        }
+    );
+
     return res.status(201).json({
         status: true,
         user
@@ -55,7 +61,40 @@ async function index(req, res) {
 
 async function update(req, res) {
 
-    const { id } = req.params;
+    const { id, type } = req.params;
+
+    if (type === 'password') {
+        const { password, newPassword } = req.body;
+
+        const user = await Users.update({ password: newPassword }, {
+            where: {
+                id,
+                password
+            }
+        });
+    
+        return res.status(200).json({
+            status: true,
+            type,
+            user,
+        })
+    }
+
+    if (type === 'profile') {
+        const { first_name, last_name, email } = req.body;
+
+        const user = await Users.update({ first_name, last_name, email }, {
+            where: {
+                id,
+            }
+        });
+    
+        return res.status(200).json({
+            status: true,
+            type,
+            user,
+        })
+    }
 
     const {
         first_name,

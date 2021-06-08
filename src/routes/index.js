@@ -20,7 +20,7 @@ routes.post('/cars/datasheet/:id_cars', cars_DatasheetStore);
 
 routes.post('/users', usersStore);
 routes.get('/users', usersIndex);
-routes.put('/users/:id', usersUpdate);
+routes.put('/users/:id/:type?', usersUpdate);
 routes.delete('/users/:id', usersDestroy);
 
 routes.post('/userscars', usercarsStore);
