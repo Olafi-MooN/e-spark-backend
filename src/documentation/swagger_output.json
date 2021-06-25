@@ -40,14 +40,7 @@
         "tags": [],
         "description": "",
         "parameters": [],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "responses": {}
       }
     },
     "/cars": {
@@ -102,14 +95,32 @@
         "responses": {}
       }
     },
-    "/users/{id}": {
+    "/users/{id}/{type?}": {
       "put": {
         "tags": [],
         "description": "",
         "parameters": [],
         "responses": {}
-      },
+      }
+    },
+    "/users/{id}": {
       "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/userscars": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/userscars/{id_user}": {
+      "get": {
         "tags": [],
         "description": "",
         "parameters": [],

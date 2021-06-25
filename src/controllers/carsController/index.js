@@ -2,7 +2,8 @@ import Cars from '../../models/Cars.cjs';
 
 async function store(req, res) {
     const { name_car, quantity_in_stock, url_img_car } = req.body;
-
+        // #swagger.tags = ['CarsController']
+        // #swagger.description = 'Armazena os carros no banco de dados'
     try {
         const cars = await Cars.create({
             name_car,

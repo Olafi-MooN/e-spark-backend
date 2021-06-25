@@ -5,7 +5,7 @@ import cors from 'cors';
 import { routes } from './routes/index.js';
 import { connection_db } from './database/index.js';
 
-const swaggerFile = JSON.parse(await readFile(new URL('./documentation/swagger_output.json', import.meta.url).pathname));
+const swaggerFile = JSON.parse(await readFile('./src/documentation/swagger_output.json'));
 
 const app = express();
 
