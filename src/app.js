@@ -9,11 +9,11 @@ const swaggerFile = JSON.parse(await readFile('./src/documentation/swagger_outpu
 
 const app = express();
 
-app.use('/doc', serve, setup(swaggerFile));
 app.use(cors());
 app.use(express.json());
 
 app.use(routes);
+app.use('/doc', serve, setup(swaggerFile));
 
 connection_db();
 
