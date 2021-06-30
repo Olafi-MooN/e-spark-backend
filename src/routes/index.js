@@ -11,7 +11,7 @@ const routes = Router();
 
 routes.get('/', home);
 
-routes.post('/cars',
+routes.post('/cars', middlewareJWT,
     // #swagger.tags = ['Cars']
     // #swagger.description = 'Route for creating cars'
 
@@ -51,7 +51,7 @@ routes.get('/cars',
     } */
     indexCars);
 
-routes.delete('/cars/:id',
+routes.delete('/cars/:id', middlewareJWT,
     // #swagger.tags = ['Cars']
     // #swagger.description = 'Route to delete one car'
 
@@ -68,7 +68,7 @@ routes.delete('/cars/:id',
     } */
     carsDestroy);
 
-routes.post('/cars/description/:id_cars',
+routes.post('/cars/description/:id_cars', middlewareJWT,
     // #swagger.tags = ['Cars description']
     // #swagger.description = 'Route to create description car'
 
@@ -92,7 +92,7 @@ routes.post('/cars/description/:id_cars',
     } */
     cars_DescriptionStore);
 
-routes.post('/cars/datasheet/:id_cars',
+routes.post('/cars/datasheet/:id_cars', middlewareJWT,
     // #swagger.tags = ['Cars datasheet']
     // #swagger.description = 'Route for creating datasheet cars'
 
@@ -151,7 +151,7 @@ routes.post('/users',
     } */
     usersStore);
 
-routes.get('/users',
+routes.get('/users', middlewareJWT,
     // #swagger.tags = ['Users']
     // #swagger.description = 'Route for list users'
 
@@ -164,7 +164,7 @@ routes.get('/users',
     } */
     usersIndex);
 
-routes.put('/users/:id/:type?',
+routes.put('/users/:id/:type?', middlewareJWT,
     // #swagger.tags = ['Users']
     // #swagger.description = 'Route for update users, using types'
 
@@ -195,7 +195,7 @@ routes.put('/users/:id/:type?',
     } */
     usersUpdate);
 
-routes.delete('/users/:id',
+routes.delete('/users/:id', middlewareJWT,
     // #swagger.tags = ['Users']
     // #swagger.description = 'Route for delete users'
 
@@ -214,7 +214,7 @@ routes.delete('/users/:id',
     } */
     usersDestroy);
 
-routes.post('/userscars',
+routes.post('/userscars', middlewareJWT,
     // #swagger.tags = ['Users Cars']
     // #swagger.description = 'Route for create history of users and cars'
 
@@ -245,7 +245,7 @@ routes.post('/userscars',
     } */
     usercarsStore);
 
-routes.get('/userscars/:id_user',
+routes.get('/userscars/:id_user', middlewareJWT,
     // #swagger.tags = ['Users Cars']
     // #swagger.description = 'Route for list history of users and cars'
 
